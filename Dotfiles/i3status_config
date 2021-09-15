@@ -39,43 +39,43 @@ ethernet enp0s25 {
 }
 
 disk "/mnt/usb" {
-        format = " USB: %percentage_used USED of %total "
+        format = " F: %percentage_used USED of %total "
     	low_threshold = "20"
     	threshold_type = "percentage_free"
-    	format_below_threshold = " USB WARNING: %percentage_free FREE "
-    	format_not_mounted = " USB "
+    	format_below_threshold = " F WARNING: %percentage_free FREE "
+    	format_not_mounted = " F: NONE "
 }
 
 disk "/" {
-        format = " SSD: %percentage_used USED of %total "
+        format = " S: %percentage_used USED of %total "
 	    low_threshold = "20"
     	threshold_type = "percentage_free"
-    	format_below_threshold = " SSD WARNING: %percentage_free FREE "
+    	format_below_threshold = " S WARNING: %percentage_free FREE "
 }
 
 memory {
-        format = " RAM: %percentage_used USED of %total "
+        format = " M: %percentage_used USED of %total "
         threshold_degraded = "20%"
-        format_degraded = " RAM WARNING: %percentage_free FREE "
+        format_degraded = " M WARNING: %percentage_free FREE "
     	threshold_critical = "10%"
-    	format_degraded = " RAM WARNING: %percentage_free FREE "
+    	format_degraded = " M WARNING: %percentage_free FREE "
 }
 
 cpu_usage {
-    	format = " CPU: %usage "
+    	format = " P: %usage "
     	degraded_threshold = "80"
     	max_threshold = "90"
 }
 
 cpu_temperature 0 {
-    	format = " CPU: %degreesC "
+    	format = " P: %degreesC "
     	path = "/sys/class/hwmon/hwmon*/temp1_input"
     	max_threshold = "60"
 }
 
 volume master {
         format = " V: %volume "
-        format_muted = " MUTED (%volume) "
+        format_muted = " V: MUTED (%volume) "
         device = "pulse"
 }
 
@@ -86,7 +86,7 @@ time {
 
 battery 0 {
         format = " B: %percentage "
-        format_down = "NO BATTERY"
+        format_down = "B: NONE "
         path = "/sys/class/power_supply/BAT1/uevent"
         last_full_capacity = true
         integer_battery_capacity = true 
