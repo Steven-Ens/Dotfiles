@@ -13,7 +13,7 @@ general {
 
 order += "path_exists VPN"
 order += "wireless wlp3s0"
-order += "ethernet enp0s25"
+order += "ethernet eth0"
 order += "disk /mnt/usb"
 order += "disk /"
 order += "memory"
@@ -33,7 +33,7 @@ wireless wlp3s0 {
         format_down = " W: DOWN "
 }
 
-ethernet enp0s25 {
+ethernet eth0 {
         format_up = " E: %ip " 
         format_down = " E: DOWN "
 }
