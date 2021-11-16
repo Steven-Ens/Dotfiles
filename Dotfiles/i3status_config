@@ -42,7 +42,7 @@ disk "/mnt/usb" {
         format = " F: %percentage_used USED of %total "
     	low_threshold = "20"
     	threshold_type = "percentage_free"
-    	format_below_threshold = " F WARNING: %percentage_free FREE "
+    	format_below_threshold = " F: %percentage_free FREE "
     	format_not_mounted = " F: NONE "
 }
 
@@ -50,15 +50,15 @@ disk "/" {
         format = " S: %percentage_used USED of %total "
 	    low_threshold = "20"
     	threshold_type = "percentage_free"
-    	format_below_threshold = " S WARNING: %percentage_free FREE "
+    	format_below_threshold = " S: %percentage_free FREE "
 }
 
 memory {
         format = " M: %percentage_used USED of %total "
         threshold_degraded = "20%"
-        format_degraded = " M WARNING: %percentage_free FREE "
+        format_degraded = " M: %percentage_free FREE "
     	threshold_critical = "10%"
-    	format_degraded = " M WARNING: %percentage_free FREE "
+    	format_degraded = " M: %percentage_free FREE "
 }
 
 cpu_usage {
@@ -82,7 +82,6 @@ volume master {
 time {
         format = " %H:%M %m-%d-%y "
 }
-
 
 battery 0 {
         format = " B: %percentage "
