@@ -76,8 +76,8 @@ set number
 set cursorline
 "show the matching part of the pair for [] {} and ()
 set showmatch
-"lines longer than 79 columns will be broken
-"set textwidth=79
+"lines longer than 119 columns will be broken
+set textwidth=119
 "sets a wrap margin to 80 characters before inserting a new line
 "set wrapmargin = 80
 
