@@ -1,13 +1,22 @@
 # Dotfiles
 File Locations:
+
 /usr/share/X11/xkb/symbols/pc
+
 ~/.xinitrc
+
 ~/.Xresources
+
 .config/i3/config
+
 .config/i3status/config
+
 .bashrc (copy to ~/ and /root/) *** sudo uses root shell settings
+
 .bash_profile (copy to ~/ and /root/) *** sudo uses root shell settings
+
 .vim/ (copy to ~/ and /root/) *** sudo uses root shell settings
+
 .vimrc (copy to ~/ and /root/) *** sudo uses root shell settings
 
 Notes:
