@@ -1,0 +1,27 @@
+!! ~/.Xresources
+
+!! Font and font size
+URxvt*font: xft: DejaVu Sans Mono: pixelsize=16
+
+!! Letter & line spacing 
+URxvt*letterSpace: 0
+URxvt*lineSpace: 3 
+
+!! Foreground & background colours
+URxvt*foreground: White
+URxvt*background: #303030
+
+!! Cursor colour & blink
+URxvt*cursorColor: Magenta
+URxvt*cursorBlink: false
+
+!! Scroll bar & scroll bar location
+!!URxvt*scrollBar: true
+!!URxvt*scrollBar_right: true
+
+!! Copy & paste using CTL-SHIFT-C and CTL-SHIFT-V
+URxvt*iso14755: false 
+!! Disables urxvt CTL-SHIFT picture mode binding (yellow box in the bottom left corner)
+URxvt*keysym.Control-Shift-C: eval: selection_to_clipboard
+URxvt*keysym.Control-Shift-V: eval: paste_clipboard
+ 
