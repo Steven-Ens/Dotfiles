@@ -22,7 +22,7 @@ bind -m vi-insert "\C-l":clear-screen
 
 # Aliases
 
-# 
+# Modify ls 
 alias ls='ls -ahl --color=auto'
 
 # Home directory
@@ -31,10 +31,8 @@ alias ..='cd ..' # Last directory
 alias ...='cd ../..'
 
 # Directory shortcuts
-alias c='cd ~/crypto' # Crypto directory
-alias d='cd ~/Downloads' # Downloads directory
-alias m='cd ~/mining' # Mining directory
-alias s='cd ~/scripts' # Scripts directory
+alias d='cd ~/Downloads' 
+alias g='cd ~/github_repositories' 
 
 # View enabled processes
 alias status='' 

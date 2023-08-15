@@ -3,7 +3,7 @@
 # ~/.config/i3/config
 
 # Autostart programs in specific workspaces
-exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 2; exec urxvt; workspace 2" 
+exec --no-startup-id i3-msg "workspace 1; exec urxvt; workspace 2; exec firefox; workspace 2" 
 
 # Brightness keyboard keys
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10

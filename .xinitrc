@@ -1,5 +1,8 @@
 # .xinitrc
 
+# Screen orientation
+xrandr --output DP-2 --primary --auto --left-of eDP-1
+
 # Turn on Num Lock 
 numlockx &
 
