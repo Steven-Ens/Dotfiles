@@ -32,7 +32,8 @@ alias ...='cd ../..'
 
 # Directory shortcuts
 alias d='cd ~/Downloads' 
-alias g='cd ~/github_repositories' 
+alias g='cd ~/guides' 
+alias r='cd ~/repositories' 
 
 # View enabled processes
 alias status='' 
