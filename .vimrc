@@ -24,7 +24,6 @@ let mapleader = " "
 nnoremap <LEADER>5 <ESC>:w<BAR> :!clear;python %<CR>
 nnoremap <LEADER>6 :NERDTreeToggle <CR>
 nnoremap <LEADER>7 :TagbarToggle <CR>
-nnoremap <BUFFER> <LEADER>8 :call Flake8() <CR>
 nnoremap <LEADER>9 :call Substitute() <CR>
 "Save files quickly after opening without write permissions
 noremap <LEADER>0 :w !sudo tee % > /dev/null <CR> 

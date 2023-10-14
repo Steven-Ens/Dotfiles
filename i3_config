@@ -3,11 +3,11 @@
 # ~/.config/i3/config
 
 # Autostart programs in specific workspaces
-exec --no-startup-id i3-msg "workspace 1; exec urxvt; workspace 2; exec firefox; workspace 2" 
+exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 2; exec urxvt; workspace 2" 
 
 # Brightness keyboard keys
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+#bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+#bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
 # Pulseaudio keyboard keys
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -21,8 +21,7 @@ bindsym Mod1+m mode Mode
 mode Mode {
     bindsym f exec firefox ; mode "default"
     bindsym s exec spotify ; mode "default"
-    bindsym q exec qbittorrent ; mode "default"
-    bindsym Return mode "default" 
+    bindsym Escape mode "default" 
 }
 
 # Font options for window titles and the status bar 
@@ -72,7 +71,7 @@ bindsym Mod1+f fullscreen toggle
 
 # Toggle tiling and floating windows
 bindsym Mod1+Shift+f floating toggle 
-floating_minimum_size 800 x 600 
+floating_minimum_size 800 x 600
 floating_maximum_size 800 x 600
 
 # Focus the parent container
@@ -85,6 +84,9 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
 
 # Switch to a workspace
 bindsym Mod1+1 workspace number $ws1
@@ -96,7 +98,6 @@ bindsym Mod1+6 workspace number $ws6
 bindsym Mod1+7 workspace number $ws7
 bindsym Mod1+8 workspace number $ws8
 bindsym Mod1+9 workspace number $ws9
-bindsym Mod1+0 workspace number $ws10
 
 # Move the focused container to a workspace
 bindsym Mod1+Shift+1 move container to workspace number $ws1
@@ -108,7 +109,6 @@ bindsym Mod1+Shift+6 move container to workspace number $ws6
 bindsym Mod1+Shift+7 move container to workspace number $ws7
 bindsym Mod1+Shift+8 move container to workspace number $ws8
 bindsym Mod1+Shift+9 move container to workspace number $ws9
-bindsym Mod1+Shift+0 move container to workspace number $ws10
 
 # Restart i3 inplace preserving your layout/session
 bindsym Mod1+Shift+r restart

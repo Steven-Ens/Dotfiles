@@ -21,7 +21,6 @@ export LS_COLORS
 bind -m vi-insert "\C-l":clear-screen
 
 # Aliases
-
 # Modify ls 
 alias ls='ls -ahl --color=auto'
 
@@ -35,15 +34,14 @@ alias d='cd ~/Downloads'
 alias g='cd ~/guides' 
 alias r='cd ~/repositories' 
 
-# View enabled processes
-alias status='' 
 # Replace 'sudo !!'
 alias redo='sudo "$BASH" -c "$(history -p !!)"'
-# Mount everything not mounted 
-alias mount='sudo mount -a'
-# Shutdown and reboot
-alias shutdown='sudo shutdown now'
+# Reboot 
 alias reboot='sudo reboot'
+# Shutdown
+alias shutdown='sudo shutdown now'
+# View enabled processes
+alias status='sudo sv status /run/runit/service/*' 
 
 #alias mv -i
 
