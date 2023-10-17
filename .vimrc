@@ -1,106 +1,121 @@
 " ~/.vimrc
 
-"nord-vim-256 colorscheme
+" Colourscheme nord-vim-256 
 colorscheme nord
 
-"vim starts with 'compatible' option on, but as soon as a vimrc file is found it will be set to 'nocompatible'
+" Vim starts with 'compatible' option on, but as soon as a vimrc file is found it will be set to 'nocompatible'
 set nocompatible
 
-"enable file type detection:
+" Enable file type detection
 filetype on
-"needed to use Flake8
+" Needed to use some plugins
 filetype plugin on
-"load the indent file for specific file types
+" Load the indent file for specific file types
 filetype indent on
 
-"show the <LEADER> key bindings appear in the bottom right hand corner 
+" Show the <LEADER> key bindings in the bottom right hand corner 
 set showcmd 
-"ensures <SPACE> isn't mapped to anything else
+" Ensures <SPACE> isn't mapped to anything else
 nnoremap <SPACE> <NOP>
-"set <LEADER> as <SPACE>
+" Set <LEADER> as <SPACE>
 let mapleader = " " 
+" Solidity for tagbar
+let g:tagbar_type_solidity = {
+    \ 'ctagstype': 'solidity',
+    \ 'ctagsargs': '-f - --options=/home/steve/.ctags',
+    \ 'kinds' : [
+        \ 'a:Contracts',
+        \ 'b:Events',
+        \ 'c:Errors',
+        \ 'd:Enums',
+        \ 'e:Structs',
+        \ 'f:Mappings',
+        \ 'g:Constructors',
+        \ 'h:Functions',
+    \ ]
+    \ }
 
-"number key bindings
-nnoremap <LEADER>5 <ESC>:w<BAR> :!clear;python %<CR>
-nnoremap <LEADER>6 :NERDTreeToggle <CR>
-nnoremap <LEADER>7 :TagbarToggle <CR>
+" Number key bindings
+nnoremap <LEADER>1 :NERDTreeToggle <CR>
+nnoremap <LEADER>2 :TagbarToggle <CR>
+
 nnoremap <LEADER>9 :call Substitute() <CR>
-"Save files quickly after opening without write permissions
+" Save files after opening without write permissions
 noremap <LEADER>0 :w !sudo tee % > /dev/null <CR> 
-"letter key bindings
+
+" Letter key bindings
 nnoremap <LEADER>w :w <CR>
-nnoremap <LEADER>ww :w! <CR>
 nnoremap <LEADER>q :wq <CR>
 nnoremap <LEADER>qq :q! <CR>
-"enable folding with 'f'
+" Enable folding
 nnoremap <LEADER>f za
-"enter visual block mode
+" Enter visual block mode
 nnoremap <LEADER>v <C-v>
-"move one window to the right, Tagbar uses <SPACE> so comma needed   
+" Move one window to the right. Tagbar uses <SPACE> so comma needed   
 nnoremap ,r <C-w>w  
 
-"autostart Tagbar
-"autocmd VimEnter * Tagbar
-"autostart NERDTree
-"autocmd VimEnter * NERDTree
-"close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Close tagbar after tag selection
+let g:tagbar_autoclose = 1
+" Set the tag jump location to appear 20% from the top
+let g:tagbar_jump_offset = winheight(0) / 5 
+" Close vim if the only window left open is a NERDTree
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-"substitute words with <F9>
+" Substitute words with <F9>
 function Substitute()
     call inputsave()
-    let word = input('Enter existing word: ')
-    let substitute = input('Enter substitute word: ') 
+    let word = input('Enter existing string: ')
+    let substitute = input('Enter substitute string: ') 
     call inputrestore()
     redraw
-    "original command format: :%s/\<word\>/substitute/gc
+    " Original command format: :%s/\<word\>/substitute/gc
     let command = ":%s/\\<" . word . "\\>/" . substitute . "/gc"
     "echo command
     execute command
 endfunction
 
-"set the default file format
+" Set the default file format
 set fileformat=unix
-"UTF-8 encoding for Python 3
+" UTF-8 encoding
 set encoding=utf-8
 
-"enable syntax highlighting
+" Enable syntax highlighting
 syntax enable 
-"enable all Python syntax highlighting features
+" Enable all Python syntax highlighting features
 let python_highlight_all = 1 
 
-"show line numbers
+" Show line numbers
 set number
-"show a visual line under the cursor's current line
+" Show a visual line on the cursor's current line
 set cursorline
-"show the matching part of the pair for [] {} and ()
+" Show the matching part of the pair for (), [] and {} 
 set showmatch
-"lines longer than 119 columns will be broken
+" Lines longer than 119 columns will be broken
 set textwidth=119
-"sets a wrap margin to 80 characters before inserting a new line
-"set wrapmargin = 80
+" Set a wrap margin to 119 characters before inserting a new line
+"set wrapmargin=119 
 
-"align the new line indent with the previous line
+" Align the new line indent with the previous line
 set autoindent
-"insert spaces when hitting <TAB>
+" Insert spaces when hitting <TAB>
 set expandtab
-"a hard <TAB> displays as 4 columns
+" A hard <TAB> displays as 4 columns
 set tabstop=4
-"insert/delete 4 spaces when hitting a <TAB>/<BACKSPACE>
+" Insert and delete 4 spaces when hitting a <TAB>/<BACKSPACE>
 set softtabstop=4
-"operation >> indents 4 columns; << unindents 4 columns
+" Operation >> indents 4 columns and operation << unindents 4 columns
 set shiftwidth=4
 
-"lines with the same indentation folded together, all folds closed by default
-set foldmethod=indent
-"when opening files the folds are not closed
+" Lines folded based on syntax
+set foldmethod=syntax
+" Opening files has folds open by default
 set nofoldenable
-"only the current fold is folded instead of all of the folds
+" Only the current fold is folded instead of all of the folds
 set foldlevel=2
-"only one fold per foldable block of code
+" Only one fold per foldable block of code
 set foldnestmax=1
 
-"status line
+" Status line
 set laststatus=2
 set statusline=[%n]\ %*
 set statusline+=%F\ %*

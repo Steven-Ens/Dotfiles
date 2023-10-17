@@ -1,0 +1,11 @@
+--langdef=Solidity                                                              
+--langmap=Solidity:.sol                                                         
+--regex-Solidity=/^contract[ \t]+([a-zA-Z0-9_]+)/\1/a,contract/                 
+--regex-Solidity=/[ \t]*event[ \t]+([a-zA-Z0-9_]+)*\(/\1/b,event/
+--regex-Solidity=/[ \t]*error[ \t]+([a-zA-Z0-9_]+)*\(/\1/c,error/
+--regex-Solidity=/[ \t]*(enum[ \t]+[a-zA-Z0-9_]+)([ \t]*\{)/\1/d,enum/      
+--regex-Solidity=/[ \t]*(struct[ \t]+[a-zA-Z0-9_]+)([ \t]*\{)/\1/e,struct/    
+--regex-Solidity=/[ \t]*mapping[ \t]+\(([a-zA-Z0-9_]+)[ \t]*=>[ \t]*([a-zA-Z0-9_]+)\)[ \t]+([a-zA-Z0-9_]+)/\3 (\1=>\2)/f,mapping/
+--regex-Solidity=/[ \t]*(constructor)*/\1/g,constructor/
+--regex-Solidity=/[ \t]*function[ \t]+([a-zA-Z0-9_]+)*\(/\1/h,function/
+

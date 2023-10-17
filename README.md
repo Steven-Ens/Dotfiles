@@ -3,6 +3,8 @@ File Locations:
 
 /usr/share/X11/xkb/symbols/pc
 
+~/.ctags
+
 ~/.xinitrc
 
 ~/.Xresources
