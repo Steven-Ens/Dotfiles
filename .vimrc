@@ -1,39 +1,33 @@
 " ~/.vimrc
+" Description: Optimized for Solidity development
+" Author: Steven Ens
 
 " Colourscheme nord-vim-256 
 colorscheme nord
 
-" Vim starts with 'compatible' option on, but as soon as a vimrc file is found it will be set to 'nocompatible'
-set nocompatible
-
 " Enable file type detection
 filetype on
-" Needed to use some plugins
+" Needed to use plugins
 filetype plugin on
 " Load the indent file for specific file types
 filetype indent on
 
+" Disable VI compatibility 
+set nocompatible
+" Set the default file format
+set fileformat=unix
+" UTF-8 encoding
+set encoding=utf-8
+
+
+" Set how many linex of history VIM remembers
+set history=100
 " Show the <LEADER> key bindings in the bottom right hand corner 
 set showcmd 
 " Ensures <SPACE> isn't mapped to anything else
 nnoremap <SPACE> <NOP>
 " Set <LEADER> as <SPACE>
 let mapleader = " " 
-" Solidity for tagbar
-let g:tagbar_type_solidity = {
-    \ 'ctagstype': 'solidity',
-    \ 'ctagsargs': '-f - --options=/home/steve/.ctags',
-    \ 'kinds' : [
-        \ 'a:Contracts',
-        \ 'b:Events',
-        \ 'c:Errors',
-        \ 'd:Enums',
-        \ 'e:Structs',
-        \ 'f:Mappings',
-        \ 'g:Constructors',
-        \ 'h:Functions',
-    \ ]
-    \ }
 
 " Number key bindings
 nnoremap <LEADER>1 :NERDTreeToggle <CR>
@@ -54,10 +48,32 @@ nnoremap <LEADER>v <C-v>
 " Move one window to the right. Tagbar uses <SPACE> so comma needed   
 nnoremap ,r <C-w>w  
 
+" Solidity for tagbar
+let g:tagbar_type_solidity = {
+    \ 'ctagstype': 'solidity',
+    \ 'ctagsargs': '-f - --options=/home/steve/.ctags',
+    \ 'kinds' : [
+        \ 'a:Contracts',
+        \ 'b:Events',
+        \ 'c:Errors',
+        \ 'd:Enums',
+        \ 'e:Structs',
+        \ 'f:Mappings',
+        \ 'g:Constructors',
+        \ 'h:Functions',
+    \ ]
+    \ }
+
 " Close tagbar after tag selection
 let g:tagbar_autoclose = 1
+" Show line numbers
+let g:tagbar_show_linenumbers = 1
 " Set the tag jump location to appear 20% from the top
 let g:tagbar_jump_offset = winheight(0) / 5 
+
+" Change indent line character
+let g:indentLine_char = '|'
+
 " Close vim if the only window left open is a NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -74,15 +90,8 @@ function Substitute()
     execute command
 endfunction
 
-" Set the default file format
-set fileformat=unix
-" UTF-8 encoding
-set encoding=utf-8
-
 " Enable syntax highlighting
 syntax enable 
-" Enable all Python syntax highlighting features
-let python_highlight_all = 1 
 
 " Show line numbers
 set number
@@ -90,6 +99,8 @@ set number
 set cursorline
 " Show the matching part of the pair for (), [] and {} 
 set showmatch
+" Length of showmatch blink in tenths of a second when matching
+set mat=2
 " Lines longer than 119 columns will be broken
 set textwidth=119
 " Set a wrap margin to 119 characters before inserting a new line
@@ -99,11 +110,11 @@ set textwidth=119
 set autoindent
 " Insert spaces when hitting <TAB>
 set expandtab
-" A hard <TAB> displays as 4 columns
+" Tab width is 4 spaces 
 set tabstop=4
 " Insert and delete 4 spaces when hitting a <TAB>/<BACKSPACE>
 set softtabstop=4
-" Operation >> indents 4 columns and operation << unindents 4 columns
+" Indent operations use 4 spaces 
 set shiftwidth=4
 
 " Lines folded based on syntax
