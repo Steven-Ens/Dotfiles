@@ -64,6 +64,8 @@ let g:tagbar_type_solidity = {
     \ ]
     \ }
 
+" Sort by order
+let g:tagbar_sort = 0
 " Close tagbar after tag selection
 let g:tagbar_autoclose = 1
 " Show line numbers
