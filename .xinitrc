@@ -1,7 +1,8 @@
 # .xinitrc
 
 # Screen orientation
-#xrandr --output DP-2 --primary --auto --left-of eDP-1
+xrandr --output DP-1 --primary --mode 3440x1440 --rate 143.96 --left-of HDMI-1 
+xrandr --output HDMI-1 --secondary --mode 1680x1050 --rate 59.95
 
 # Set laptop screen brightness
 #xbacklight -set 60 &

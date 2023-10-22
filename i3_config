@@ -3,7 +3,7 @@
 # ~/.config/i3/config
 
 # Autostart programs in specific workspaces
-exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 2; exec urxvt; workspace 2" 
+exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 9; exec firefox; workspace 2; exec urxvt; workspace 2" 
 
 # Brightness keyboard keys
 #bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
@@ -20,7 +20,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym Mod1+m mode Mode
 mode Mode {
     bindsym f exec firefox ; mode "default"
-    bindsym s exec spotify ; mode "default"
     bindsym Escape mode "default" 
 }
 
@@ -78,15 +77,25 @@ floating_maximum_size 800 x 600
 bindsym Mod1+p focus parent  
 
 # Define variable names for default workspaces 
-set $ws1 "1"
+set $ws1 "1" 
 set $ws2 "2"
-set $ws3 "3"
+set $ws3 "3" 
 set $ws4 "4"
-set $ws5 "5"
+set $ws5 "5" 
 set $ws6 "6"
-set $ws7 "7"
+set $ws7 "7" 
 set $ws8 "8"
-set $ws9 "9"
+set $ws9 "9" 
+
+workspace $ws1 output DP-1
+workspace $ws2 output DP-1
+workspace $ws3 output DP-1
+workspace $ws4 output DP-1
+workspace $ws5 output DP-1
+workspace $ws6 output DP-1
+workspace $ws7 output DP-1
+workspace $ws8 output DP-1
+workspace $ws9 output HDMI-1
 
 # Switch to a workspace
 bindsym Mod1+1 workspace number $ws1
