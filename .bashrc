@@ -30,6 +30,7 @@ alias ..='cd ..' # Last directory
 alias ...='cd ../..'
 
 # Directory shortcuts
+alias c='cd ~/repositories/Core'
 alias d='cd ~/Downloads' 
 alias g='cd ~/guides' 
 alias r='cd ~/repositories' 
