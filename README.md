@@ -24,4 +24,5 @@ File Locations:
 Notes:
 1. Rename both i3_config and i3status_config to config when copying them
 2. Directory .vim/ only includes the nord.vim colorscheme, not the plugins which are their own git repositories
+3. Modify location of .ctags in .vimrc depending on if on MacOS or Linux
 
