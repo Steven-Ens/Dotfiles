@@ -1,11 +1,22 @@
---langdef=Solidity                                                              
---langmap=Solidity:.sol                                                         
---regex-Solidity=/^contract[ \t]+([a-zA-Z0-9_]+)/\1/a,contract/                 
---regex-Solidity=/[ \t]*event[ \t]+([a-zA-Z0-9_]+)*\(/\1/b,event/
---regex-Solidity=/[ \t]*error[ \t]+([a-zA-Z0-9_]+)*\(/\1/c,error/
---regex-Solidity=/[ \t]*enum[ \t]+([a-zA-Z0-9_]+)*/\1/d,enum/      
---regex-Solidity=/[ \t]*struct[ \t]+([a-zA-Z0-9_]+)*/\1/e,struct/    
---regex-Solidity=/[ \t]*mapping[ \t]+\([a-zA-Z0-9_]+[ \t]*=>[ \t]*[a-zA-Z0-9_]+\)[ \t]+[a-zA-Z0-9_]+[ \t]+([a-zA-Z0-9_]+)*/\1/f,mapping/
---regex-Solidity=/[ \t]*(constructor)*/\1/g,constructor/
---regex-Solidity=/[ \t]*function[ \t]+([a-zA-Z0-9_]+)*\(/\1/h,function/
+--langdef=Solidity
+--langmap=Solidity:.sol
 
+--regex-Solidity=/^[ \t]*(abstract[ \t]+)?contract[ \t]+([A-Za-z_][A-Za-z0-9_]*)/\2/a,contract/
+--regex-Solidity=/^[ \t]*interface[ \t]+([A-Za-z_][A-Za-z0-9_]*)/\1/b,interface/
+--regex-Solidity=/^[ \t]*library[ \t]+([A-Za-z_][A-Za-z0-9_]*)/\1/c,library/
+
+--regex-Solidity=/^[ \t]*struct[ \t]+([A-Za-z_][A-Za-z0-9_]*)/\1/d,struct/
+--regex-Solidity=/^[ \t]*enum[ \t]+([A-Za-z_][A-Za-z0-9_]*)/\1/e,enum/
+
+--regex-Solidity=/^[ \t]*mapping[ \t]*\([^)]*\)[ \t]+(public|private|internal|external)?[ \t]*([A-Za-z_][A-Za-z0-9_]*)/\2/f,mapping/
+
+--regex-Solidity=/^[ \t]*event[ \t]+([A-Za-z_][A-Za-z0-9_]*)[ \t]*\(/\1/g,event/
+--regex-Solidity=/^[ \t]*error[ \t]+([A-Za-z_][A-Za-z0-9_]*)[ \t]*\(/\1/h,error/
+
+--regex-Solidity=/^[ \t]*modifier[ \t]+([A-Za-z_][A-Za-z0-9_]*)[ \t]*\(/\1/i,modifier/
+
+--regex-Solidity=/^[ \t]*(constructor)[ \t]*\(/\1/j,constructor/
+--regex-Solidity=/^[ \t]*(receive)[ \t]*\(/\1/k,receive/
+--regex-Solidity=/^[ \t]*(fallback)[ \t]*\(/\1/l,fallback/
+
+--regex-Solidity=/^[ \t]*function[ \t]+([A-Za-z_][A-Za-z0-9_]*)[ \t]*\(/\1/m,function/
