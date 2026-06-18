@@ -1,13 +1,11 @@
-# i3 config file (v4)
-
 # ~/.config/i3/config
 
 # Autostart programs in specific workspaces
-exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 9; exec firefox; workspace 2; exec urxvt; workspace 2" 
+exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 2; exec urxvt; workspace 2" 
 
 # Brightness keyboard keys
-#bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-#bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 # Pulseaudio keyboard keys
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -16,9 +14,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# Program selection mode 
-bindsym Mod1+m mode Mode
-mode Mode {
+# Program launcher
+bindsym Mod1+m mode Launcher
+mode Launcher {
     bindsym f exec firefox ; mode "default"
     bindsym Escape mode "default" 
 }
@@ -30,7 +28,7 @@ font pango:DejaVu Sans Mono 12
 bindsym Mod1+space exec --no-startup-id i3lock -f -c 000000
 
 # Start a terminal window
-bindsym Mod1+Return exec i3-sensible-terminal
+bindsym Mod1+Return exec urxvt
 
 # Kill the focused window
 bindsym Mod1+BackSpace kill 
@@ -59,19 +57,14 @@ bindsym Mod1+Shift+$down move down
 bindsym Mod1+Shift+$up move up
 bindsym Mod1+Shift+$right move right
 
-# Split in horizontal orientation (Right)
+# Open terminal to the right
 bindsym Mod1+r split h ; exec urxvt 
 
-# Split in vertical orientation (Down)
+# Open terminal below
 bindsym Mod1+d split v ; exec urxvt
 
 # Enter fullscreen mode for the focused container
 bindsym Mod1+f fullscreen toggle
-
-# Toggle tiling and floating windows
-bindsym Mod1+Shift+f floating toggle 
-floating_minimum_size 800 x 600
-floating_maximum_size 800 x 600
 
 # Focus the parent container
 bindsym Mod1+p focus parent  
@@ -86,16 +79,6 @@ set $ws6 "6"
 set $ws7 "7" 
 set $ws8 "8"
 set $ws9 "9" 
-
-workspace $ws1 output DP-1
-workspace $ws2 output DP-1
-workspace $ws3 output DP-1
-workspace $ws4 output DP-1
-workspace $ws5 output DP-1
-workspace $ws6 output DP-1
-workspace $ws7 output DP-1
-workspace $ws8 output DP-1
-workspace $ws9 output HDMI-1
 
 # Switch to a workspace
 bindsym Mod1+1 workspace number $ws1
@@ -119,27 +102,14 @@ bindsym Mod1+Shift+7 move container to workspace number $ws7
 bindsym Mod1+Shift+8 move container to workspace number $ws8
 bindsym Mod1+Shift+9 move container to workspace number $ws9
 
-# Restart i3 inplace preserving your layout/session
+# Restart i3 preserving the session
 bindsym Mod1+Shift+r restart
 
 # Exit i3 and log out of your X session
 bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'Exit i3 Window Manager & End Current X Session?' -B ' YES ' 'i3-msg exit'"
 
-
 # Start i3bar to display the i3status bar 
 bar {
         status_command i3status
-        position bottom
+        position top
 }
-
-#######################################################################
-# Automatically start i3-config-wizard to offer the user to create a
-# keysym-based config which used their favorite modifier (alt or windows)
-#
-# i3-config-wizard will not launch if there already is a config file
-# in ~/.config/i3/config (or $XDG_CONFIG_HOME/i3/config if set) or
-# ~/.i3/config.
-#
-# Please remove the following exec line:
-#######################################################################
-#exec i3-config-wizard
