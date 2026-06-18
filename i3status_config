@@ -1,10 +1,8 @@
-# i3status config file 
+# ~/.config/i3status/config
 
 # It is important that this file is edited as UTF-8.
 # The following line should contain a sharp s:
 # ß
-
-# ~/.config/i3status/config
 
 general {
         colors = true
@@ -12,7 +10,7 @@ general {
 }
 
 order += "path_exists VPN"
-#order += "wireless wlan0"
+order += "wireless wlan0"
 order += "ethernet eth0"
 order += "disk /mnt/usb"
 order += "disk /"
@@ -20,7 +18,7 @@ order += "memory"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "volume master"
-#order += "battery 0"
+order += "battery 0"
 order += "time"
 
 path_exists VPN {
@@ -48,7 +46,7 @@ disk "/mnt/usb" {
 
 disk "/" {
         format = " S: %percentage_used USED of %total "
-	    low_threshold = "20"
+	low_threshold = "20"
     	threshold_type = "percentage_free"
     	format_below_threshold = " S: %percentage_free FREE "
 }
@@ -89,6 +87,6 @@ battery 0 {
         path = "/sys/class/power_supply/BAT1/uevent"
         last_full_capacity = true
         integer_battery_capacity = true 
-        low_threshold = 20
-        threshold_type = percentage
+        low_threshold = "20"
+        threshold_type = "percentage"
 }
