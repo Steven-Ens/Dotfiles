@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
@@ -6,7 +6,7 @@ PLUGIN_DIR="$HOME/.vim/pack/plugins/start/"
 
 cd "$PLUGIN_DIR"
 
-echo "Updating Vim plugins in: $PLUGIN_DIR"
+echo "Updating Vim plugins in $PLUGIN_DIR"
 echo
 
 for plugin in */; do
@@ -18,7 +18,7 @@ for plugin in */; do
         git -C "$plugin" pull
         echo
     else
-        echo "Skipping $plugin — not a git repository"
+        echo "Skipping $plugin as it's not a git repository"
         echo
     fi
 done
