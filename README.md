@@ -8,11 +8,11 @@ File Locations:
 
 ```~/.xinitrc```
 
-```~/.Xresources```
+```~/.config/kitty/kitty.conf```
 
-```.config/i3/config```
+```~/.config/i3/config```
 
-```.config/i3status/config```
+```~/.config/i3status/config```
 
 Copy the following files to ```~/``` and ```/root/``` as sudo uses root shell settings:
 
