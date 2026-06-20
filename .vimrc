@@ -8,7 +8,7 @@
 
 " Disable Vi compatibility 
 set nocompatible
-" Colourscheme nord-vim-256 
+" Colourscheme nord-vim
 colorscheme nord
 
 " Enable file type detection
@@ -53,52 +53,36 @@ noremap <LEADER>0 :w !sudo tee % > /dev/null <CR>
 nnoremap <LEADER>w :w <CR>
 nnoremap <LEADER>q :wq <CR>
 nnoremap <LEADER>qq :q! <CR>
-" Enable folding
-nnoremap <LEADER>f za
 " Enter visual block mode
 nnoremap <LEADER>v <C-v>
 " Move one window to the right. Tagbar uses <SPACE> so comma needed   
 nnoremap ,r <C-w>w  
-" Go to definition 
-nnoremap gd :YcmCompleter GoTo<CR> 
-" Go back after YCM GoTo jump
+
+" Allow gf to find Solidity imports in Foundry projects
+set path+=test/**
+set path+=script/**
+set path+=src/**
+set path+=lib/**
+set path+=lib/openzeppelin-contracts/**
+set path+=lib/openzeppelin-contracts/contracts/**
+
+" Go back to previous location
 nnoremap gb <C-o>
-" Find references/usages 
-nnoremap gr :YcmCompleter GoToReferences<CR>
+" Find references of word under cursor
+nnoremap gr :grep! "\<<C-r><C-w>\>" src test script lib<CR>:copen<CR>
 
 " ====================
 " Plugins
 " ====================
 
-" First install the Solidity language server globally via npm:
-" $ npm install -g @nomicfoundation/solidity-language-server
-let g:ycm_language_server = [
-    \ {
-    \   'name': 'solidity',
-    \   'filetypes': [ 'solidity' ],
-    \   'cmdline': [ 'nomicfoundation-solidity-language-server', '--stdio' ],
-    \   'project_root_files': [ 'foundry.toml', '.git' ]
-    \ }
-\ ]
-
-" Automatically show autocomplete suggestions while typing
+" Automatically show completion suggestions while typing
 let g:ycm_auto_trigger = 1
-" Trigger semantic autocomplete when typing '.'
-let g:ycm_semantic_triggers = {
-  \ 'solidity': ['.']
-\ }
-" Keep generic filename completion
-let g:ycm_filetype_specific_completion_to_disable = { 
-  \ 'solidity': ['filename'] 
-\ }
 " Minimum number of typed characters before autocomplete appears
 let g:ycm_min_num_of_chars_for_completion = 2
 " Minimum matching characters required for identifier suggestions
 let g:ycm_min_num_identifier_candidate_chars = 2
 " Ignore identifiers found in comments and strings
 let g:ycm_collect_identifiers_from_comments_and_strings = 0
-" Do not include ctags identifiers in autocomplete
-let g:ycm_collect_identifiers_from_tags_files = 0
 
 " Close vim if the only window left open is a NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -148,6 +132,7 @@ function Substitute()
     call inputrestore()
     redraw
     let command = ":%s/\\<" . word . "\\>/" . substitute . "/gc"
+    " Uncomment for testing
     "echo command
     execute command
 endfunction
@@ -182,17 +167,6 @@ set tabstop=4
 set softtabstop=4
 " Indent operations use 4 spaces 
 set shiftwidth=4
-
-" ====================
-" Folding 
-" ====================
-
-" Lines folded based on syntax
-set foldmethod=syntax
-" Opening files has folds open by default
-set nofoldenable
-" Only one fold per foldable block of code
-set foldnestmax=1
 
 " ====================
 " Statue Line 
