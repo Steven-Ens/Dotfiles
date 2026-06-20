@@ -8,6 +8,8 @@
 
 " Disable Vi compatibility 
 set nocompatible
+" Enable true color support
+set termguicolors
 " Colourscheme nord-vim
 colorscheme nord
 
