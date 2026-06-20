@@ -61,12 +61,16 @@ nnoremap <LEADER>v <C-v>
 nnoremap ,r <C-w>w  
 
 " Allow gf to find Solidity imports in Foundry projects
-set path+=test/**
-set path+=script/**
-set path+=src/**
-set path+=lib/**
-set path+=lib/openzeppelin-contracts/**
-set path+=lib/openzeppelin-contracts/contracts/**
+function! SolidityGF()
+    let file = expand('<cfile>')
+
+    let file = substitute(file, '^@openzeppelin/contracts-upgradeable/', 'lib/openzeppelin-contracts-upgradeable/contracts/', '')
+    let file = substitute(file, '^@openzeppelin/contracts/', 'lib/openzeppelin-contracts/contracts/', '')
+
+    execute 'edit ' . fnameescape(file)
+endfunction
+
+autocmd FileType solidity nnoremap <buffer> gf :call SolidityGF()<CR>
 
 " Go back to previous location
 nnoremap gb <C-o>
