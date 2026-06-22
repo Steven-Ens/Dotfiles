@@ -71,10 +71,12 @@ set nowritebackup
 " Longer than 0.3 seconds leads to a worse experience 
 set updatetime=300
 
-" Tab moves to next completion item when popup is visible
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-" Shift-Tab moves to previous completion item when popup is visible
-inoremap <expr> <S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+" Tab accepts the current suggestion
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+" Ctrl-j moves to next suggestion
+inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+" Ctrl-k moves to previous suggestion
+inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
 
 " Go to symbol definition
 nmap gd <Plug>(coc-definition)
