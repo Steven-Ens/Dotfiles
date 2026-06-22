@@ -71,6 +71,11 @@ set nowritebackup
 " Longer than 0.3 seconds leads to a worse experience 
 set updatetime=300
 
+" Tab moves to next completion item when popup is visible
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" Shift-Tab moves to previous completion item when popup is visible
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
 " Go to symbol definition
 nmap gd <Plug>(coc-definition)
 " Go to type definition
