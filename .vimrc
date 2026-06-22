@@ -72,9 +72,9 @@ set nowritebackup
 set updatetime=300
 
 " Tab moves to next completion item when popup is visible
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 " Shift-Tab moves to previous completion item when popup is visible
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Go to symbol definition
 nmap gd <Plug>(coc-definition)
