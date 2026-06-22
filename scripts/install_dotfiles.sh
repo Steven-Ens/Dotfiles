@@ -37,14 +37,14 @@ ln -sfn "$DOTFILES/.vim/coc-settings.json" "$USER_HOME/.vim/coc-settings.json"
 # /usr/share/X11/xkb/symbols/
 ln -sfn "$DOTFILES/usr/share/X11/xkb/symbols/pc" "/usr/share/X11/xkb/symbols/pc"
 
-# Copy to ~/
-cp "$DOTFILES/.bashrc" "$USER_HOME/.bashrc"
-cp "$DOTFILES/.bash_profile" "$USER_HOME/.bash_profile"
-cp "$DOTFILES/.vimrc" "$USER_HOME/.vimrc"
+# ~/
+ln -sfn "$DOTFILES/.bashrc" "$USER_HOME/.bashrc"
+ln -sfn "$DOTFILES/.bash_profile" "$USER_HOME/.bash_profile"
+ln -sfn "$DOTFILES/.vimrc" "$USER_HOME/.vimrc"
 
-# Copy to /root/
-cp "$DOTFILES/.bashrc" "/root/.bashrc"
-cp "$DOTFILES/.bash_profile" "/root/.bash_profile"
-cp "$DOTFILES/.vimrc" "/root/.vimrc"
+# /root/
+ln -sfn "$DOTFILES/.bashrc" "/root/.bashrc"
+ln -sfn "$DOTFILES/.bash_profile" "/root/.bash_profile"
+ln -sfn "$DOTFILES/.vimrc" "/root/.vimrc"
 
 echo "Dotfiles installed successfully."
