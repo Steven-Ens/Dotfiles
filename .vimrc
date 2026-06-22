@@ -65,19 +65,22 @@ nnoremap ,r <C-w>w
 " ====================
 
 " Required for coc.nvim
-" Some servers have issues with backup files, see #649
+" Some servers have issues with backup files
 set nobackup
 set nowritebackup
-
-" Longer than 0.3s leads to worse experience 
+" Longer than 0.3 seconds leads to a worse experience 
 set updatetime=300
 
-nnoremap gd <Plug>(coc-definition)
+" Go to symbol definition
+nmap gd <Plug>(coc-definition)
+" Go to type definition
+nmap gy <Plug>(coc-type-definition)
+" Go to implementation
+nmap gi <Plug>(coc-implementation)
+" Show references
+nmap gr <Plug>(coc-references)
 " Go back to previous location
 nnoremap gb <C-o>
-nnoremap gy <Plug>(coc-type-definition)
-nnoremap gi <Plug>(coc-implementation)
-nnoremap gr <Plug>(coc-references)
 
 " Close vim if the only window left open is a NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
