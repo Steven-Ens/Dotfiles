@@ -3,13 +3,19 @@
 ## Dotfile Installation
 * Run ```install_dotfiles.sh``` as root to install the dotfiles:
 ```
-$ sudo ./install_dotfiles.sh
+$ sudo ./scripts/install_dotfiles.sh
+```
+
+## Vim Plugin Installation
+* Run ```install_vim_plugins.sh``` to install vim plugins:
+```
+$ ./scripts/install_vim_plugins.sh
 ```
 
 ## Vim Plugin Updates
 * Run ```update_vim_plugins.sh``` to update Vim plugins:
 ```
-$ ./update_vim_plugins.sh
+$ ./scripts/update_vim_plugins.sh
 ```
 
 ## File Locations
