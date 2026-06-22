@@ -47,7 +47,7 @@ nnoremap <LEADER>4 :w <CR> :redraw! <CR> :!clear && forge coverage --gas-report 
 nnoremap <LEADER>5 :w <CR> :redraw! <CR> :!clear && forge script script/Deploy.s.sol:Deploy -vvv <CR>
 nnoremap <LEADER>6 :w <CR> :!forge fmt % <CR> :e <CR>
 " Substitute
-nnoremap <LEADER>9 :call Substitute() <CR>
+nnoremap <LEADER>rn :call Substitute() <CR>
 " Save files after opening without write permissions
 noremap <LEADER>0 :w !sudo tee % > /dev/null <CR> 
 
@@ -60,35 +60,24 @@ nnoremap <LEADER>v <C-v>
 " Move one window to the right. Tagbar uses <SPACE> so comma needed   
 nnoremap ,r <C-w>w  
 
-" Allow gf to find Solidity imports in Foundry projects
-function! SolidityGF()
-    let file = expand('<cfile>')
-
-    let file = substitute(file, '^@openzeppelin/contracts-upgradeable/', 'lib/openzeppelin-contracts-upgradeable/contracts/', '')
-    let file = substitute(file, '^@openzeppelin/contracts/', 'lib/openzeppelin-contracts/contracts/', '')
-
-    execute 'edit ' . fnameescape(file)
-endfunction
-
-autocmd FileType solidity nnoremap <buffer> gf :call SolidityGF()<CR>
-
-" Go back to previous location
-nnoremap gb <C-o>
-" Find references of word under cursor
-nnoremap gr :grep! "\<<C-r><C-w>\>" src test script lib<CR>:copen<CR>
-
 " ====================
 " Plugins
 " ====================
 
-" Automatically show completion suggestions while typing
-let g:ycm_auto_trigger = 1
-" Minimum number of typed characters before autocomplete appears
-let g:ycm_min_num_of_chars_for_completion = 2
-" Minimum matching characters required for identifier suggestions
-let g:ycm_min_num_identifier_candidate_chars = 2
-" Ignore identifiers found in comments and strings
-let g:ycm_collect_identifiers_from_comments_and_strings = 0
+" Required for coc.nvim
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Longer than 0.3s leads to worse experience 
+set updatetime=300
+
+nnoremap gd <Plug>(coc-definition)
+" Go back to previous location
+nnoremap gb <C-o>
+nnoremap gy <Plug>(coc-type-definition)
+nnoremap gi <Plug>(coc-implementation)
+nnoremap gr <Plug>(coc-references)
 
 " Close vim if the only window left open is a NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -96,7 +85,7 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Solidity for tagbar
 let g:tagbar_type_solidity = {
     \ 'ctagstype': 'solidity',
-    \ 'ctagsargs': '-f - --options=/Users/steve/.ctags',
+    \ 'ctagsargs': '-f - --options=/home/steve/.ctags',
     \ 'kinds' : [
         \ 'a:Contracts',
         \ 'b:Interfaces',
@@ -133,8 +122,8 @@ let g:indentLine_char = '|'
 " Substitute whole words
 function Substitute()
     call inputsave()
-    let word = input('Enter existing string: ')
-    let substitute = input('Enter substitute string: ') 
+    let word = input('Existing string: ')
+    let substitute = input('Substitute string: ') 
     call inputrestore()
     redraw
     let command = ":%s/\\<" . word . "\\>/" . substitute . "/gc"
