@@ -6,15 +6,16 @@ Installation & Updates:
 
 File Locations:
 * ```~/.ctags```
+* ```~/.gitconfig```
 * ```~/.xinitrc```
-* ```~/.config/kitty/kitty.conf```
 * ```~/.config/i3/config```
 * ```~/.config/i3status/config```
+* ```~/.config/kitty/kitty.conf```
+* ```~/.config/kitty/current-theme.conf```
 * ```~/.vim/coc-settings.json```
 * ```/usr/share/X11/xkb/symbols/pc```
 
 The following files are copied to ```~/``` and ```/root/``` as sudo uses root shell settings:
 * ```.bashrc```
 * ```.bash_profile```
-* ```.vim/```
 * ```.vimrc```
