@@ -3,25 +3,18 @@
 File Locations:
 
 ```/usr/share/X11/xkb/symbols/pc```
-
 ```~/.ctags```
-
 ```~/.xinitrc```
-
 ```~/.config/kitty/kitty.conf```
-
 ```~/.config/i3/config```
-
 ```~/.config/i3status/config```
+```~/.vim/coc-settings.json```
 
 Copy the following files to ```~/``` and ```/root/``` as sudo uses root shell settings:
 
 ```.bashrc```
-
 ```.bash_profile```
-
 ```.vim/```
-
 ```.vimrc```
 
 Notes:
