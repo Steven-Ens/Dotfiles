@@ -22,15 +22,11 @@ git clone https://tpope.io/vim/repeat.git "$PLUGIN_DIR/vim-repeat" || true
 git clone https://tpope.io/vim/surround.git "$PLUGIN_DIR/vim-surround" || true
 git clone --branch release https://github.com/neoclide/coc.nvim.git "$PLUGIN_DIR/coc.nvim" || true
 
-# Install coc.nvim
-cd "$PLUGIN_DIR/coc.nvim"
-npm ci
-
-# Install Solidity language server for coc.nvim
-npm install -g @nomicfoundation/solidity-language-server
-
 # Install Nord Vim theme
 git clone https://github.com/nordtheme/vim.git "$PLUGIN_DIR/nord-vim" || true
 cp "$PLUGIN_DIR/nord-vim/colors/nord.vim" "$COLOR_DIR/nord.vim"
+
+# Install Solidity language server for coc.nvim
+npm install -g @nomicfoundation/solidity-language-server
 
 echo "Vim plugins and Solidity language server installed successfully."

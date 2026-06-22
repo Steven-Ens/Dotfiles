@@ -5,7 +5,6 @@ set -e
 
 # Vim plugin directory.
 PLUGIN_DIR="$HOME/.vim/pack/plugins/start"
-
 # Vim colorscheme directory.
 COLOR_DIR="$HOME/.vim/colors"
 
@@ -27,16 +26,6 @@ for plugin in */; do
         echo
     fi
 done
-
-# Reinstall coc.nvim dependencies.
-if [ -d "$PLUGIN_DIR/coc.nvim" ]; then
-    echo "Updating coc.nvim dependencies"
-
-    cd "$PLUGIN_DIR/coc.nvim"
-    npm ci
-
-    echo
-fi
 
 # Copy nord.vim colorscheme to $COLOR_DIR
 if [ -f "$PLUGIN_DIR/nord-vim/colors/nord.vim" ]; then
