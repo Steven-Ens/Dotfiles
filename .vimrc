@@ -89,6 +89,9 @@ nmap gr <Plug>(coc-references)
 " Go back to previous location
 nnoremap gb <C-o>
 
+" Change the indent line character for IndentLine
+let g:indentLine_char = '|'
+
 " Close vim if the only window left open is a NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -122,8 +125,8 @@ let g:tagbar_show_linenumbers = 1
 " Set the tag jump location to appear 20% from the top
 let g:tagbar_jump_offset = winheight(0) / 5 
 
-" Change the indent line character
-let g:indentLine_char = '|'
+" Use git commands with vim-fugitive
+nnoremap <leader>g :Git<Space>
 
 " ====================
 " Substitute
