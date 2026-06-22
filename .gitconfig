@@ -1,0 +1,7 @@
+[user]
+	name = Steven Ens
+    email = steven_ens@protonmail.com
+[core]
+    editor = vim
+[init]
+    defaultBranch = main
