@@ -1,7 +1,7 @@
 # ~/.config/i3/config
 
 # Autostart programs in specific workspaces
-exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 2; exec urxvt; workspace 2" 
+exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 2; exec kitty; workspace 2" 
 
 # Brightness keyboard keys
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
@@ -28,7 +28,7 @@ font pango:DejaVu Sans Mono 12
 bindsym Mod1+space exec --no-startup-id i3lock -f -c 000000
 
 # Start a terminal window
-bindsym Mod1+Return exec urxvt
+bindsym Mod1+Return exec kitty
 
 # Kill the focused window
 bindsym Mod1+BackSpace kill 
@@ -58,10 +58,10 @@ bindsym Mod1+Shift+$up move up
 bindsym Mod1+Shift+$right move right
 
 # Open terminal to the right
-bindsym Mod1+r split h ; exec urxvt 
+bindsym Mod1+r split h ; exec kitty 
 
 # Open terminal below
-bindsym Mod1+d split v ; exec urxvt
+bindsym Mod1+d split v ; exec kitty
 
 # Enter fullscreen mode for the focused container
 bindsym Mod1+f fullscreen toggle
