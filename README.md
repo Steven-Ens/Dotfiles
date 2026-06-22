@@ -1,8 +1,14 @@
 # Dotfiles
 
-Installation & Updates:
-1. Run ```install.sh``` to install the dotfiles.
-2. Run ```update_vim_plugins.sh``` to update Vim plugins.
+Dotfile Installation & Vim Plugin Updates:
+1. Run ```install_dotfiles.sh``` as root to install the dotfiles:
+```
+$ sudo ./install_dotfiles.sh
+```
+3. Run ```update_vim_plugins.sh``` to update Vim plugins:
+```
+$ ./update_vim_plugins.sh
+```
 
 File Locations:
 * ```~/.ctags```
