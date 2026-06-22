@@ -49,7 +49,7 @@ nnoremap <LEADER>6 :w <CR> :!forge fmt % <CR> :e <CR>
 " Substitute
 nnoremap <LEADER>rn :call Substitute() <CR>
 " Save files after opening without write permissions
-noremap <LEADER>0 :w !sudo tee % > /dev/null <CR> 
+nnoremap <LEADER>0 :w !sudo tee % > /dev/null <CR> 
 
 " Letter key bindings
 nnoremap <LEADER>w :w <CR>
