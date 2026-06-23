@@ -32,6 +32,8 @@ alias h='cd ~'
 alias d='cd ~/Downloads' 
 alias r='cd ~/repositories' 
 
+# Enable PIA VPN
+alias vpn='sudo openvpn --config /etc/openvpn/client/ca_vancouver.ovpn --auth-nocache --auth-user-pass /etc/openvpn/login.txt'
 # View enabled processes
 alias status='sudo sv status /run/runit/service/*' 
 # Reboot 
