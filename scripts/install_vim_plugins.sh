@@ -26,7 +26,4 @@ git clone --branch release https://github.com/neoclide/coc.nvim.git "$PLUGIN_DIR
 git clone https://github.com/nordtheme/vim.git "$PLUGIN_DIR/nord-vim" || true
 cp "$PLUGIN_DIR/nord-vim/colors/nord.vim" "$COLOR_DIR/nord.vim"
 
-# Install Solidity language server for coc.nvim
-npm install -g @nomicfoundation/solidity-language-server
-
 echo "Vim plugins and Solidity language server installed successfully."
