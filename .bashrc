@@ -17,22 +17,30 @@ export EDITOR=vim
 LS_COLORS="di=1;38;5;74:tw=1;33"
 export LS_COLORS
 
-# Use CTRL-l to clear screen
+# Use CTRL-l to clear screen after bash vi keys set
 bind -m vi-insert "\C-l":clear-screen
 
 # Show all files in human-readable long format
 alias ls='ls -ahl --color=auto'
 
+# Interactive commands
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+
 # Previous directories
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # Directory shortcuts
 alias h='cd ~' 
 alias d='cd ~/Downloads' 
 alias r='cd ~/repositories' 
 
-# Enable PIA VPN
+# feh
+alias feh='feh --fullscreen --draw-filename'
+# Run PIA VPN
 alias vpn='sudo openvpn --config /etc/openvpn/client/ca_vancouver.ovpn --auth-nocache --auth-user-pass /etc/openvpn/login.txt'
 # View enabled processes
 alias status='sudo sv status /run/runit/service/*' 
@@ -40,11 +48,6 @@ alias status='sudo sv status /run/runit/service/*'
 alias reboot='sudo reboot'
 # Shutdown
 alias shutdown='sudo poweroff'
-
-# Interactive commands
-alias rm='rm -i'
-alias mv='mv -i'
-alias cp='cp -i'
 
 # Open new terminal in same directory as current terminal
 cd() {
