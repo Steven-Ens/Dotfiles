@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Exit immediately if any command fails.
+# Exit immediately if any command fails
 set -e
 
 DOTFILES="/home/steve/Dotfiles"
@@ -12,9 +12,9 @@ mkdir -p "$USER_HOME/.config/kitty"
 mkdir -p "$USER_HOME/.vim"
 
 # ln -sfn
-# -s = make a symbolic link
-# -f = force overwrite existing destination files/symlinks
-# -n = if destination is a symlink to a directory, replace the symlink itself instead of following it
+# -s = Make a symbolic link
+# -f = Force overwrite existing destination files/symlinks
+# -n = If destination is a symlink to a directory, replace the symlink itself instead of following it
 
 # ~/
 ln -sfn "$DOTFILES/.ctags" "$USER_HOME/.ctags"
