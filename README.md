@@ -1,13 +1,12 @@
 # Dotfiles
 
 ## Dotfile Installation
-* Run ```install_dotfiles.sh``` as root to install the dotfiles (Onwership of /home/steve not modified):
+* Run ```install_dotfiles.sh``` as root to install the dotfiles. Onwership of /home/steve is not modified:
 ```
 $ sudo ./scripts/install_dotfiles.sh
 ```
 
 ## Vim Plugin Installation
-* @nomicfoundation/solidity-language-server is installed as well.
 * Run ```install_vim_plugins.sh``` to install vim plugins:
 ```
 $ ./scripts/install_vim_plugins.sh
@@ -25,8 +24,8 @@ $ ./scripts/update_vim_plugins.sh
 * ```~/.xinitrc```
 * ```~/.config/i3/config```
 * ```~/.config/i3status/config```
-* ```~/.config/kitty/kitty.conf```
 * ```~/.config/kitty/current-theme.conf```
+* ```~/.config/kitty/kitty.conf```
 * ```~/.vim/coc-settings.json```
 * ```/usr/share/X11/xkb/symbols/pc```
 
