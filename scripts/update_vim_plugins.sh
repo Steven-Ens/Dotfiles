@@ -1,19 +1,20 @@
 #!/bin/bash
 
-# Exit immediately if any command fails.
+# Exit immediately if any command fails
 set -e
 
-# Vim plugin directory.
-PLUGIN_DIR="$HOME/.vim/pack/plugins/start"
-# Vim colorscheme directory.
-COLOR_DIR="$HOME/.vim/colors"
+USER_HOME="/home/steve"
+# Vim plugin directory
+PLUGIN_DIR="$USER_HOME/.vim/pack/plugins/start"
+# Vim colorscheme directory
+COLOR_DIR="$USER_HOME/.vim/colors"
 
 cd "$PLUGIN_DIR"
 
 echo "Updating Vim plugins in $PLUGIN_DIR"
 echo
 
-# Update all Git repositories in the plugin directory.
+# Update all Git repositories in $PLUGIN_DIR
 for plugin in */; do
     plugin="${plugin%/}"
 
