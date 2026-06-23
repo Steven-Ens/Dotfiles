@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Exit immediately if any command fails.
+# Exit immediately if any command fails
 set -e
 
 USER_HOME="/home/steve"
-# Vim plugin directory.
+# Vim plugin directory
 PLUGIN_DIR="$USER_HOME/.vim/pack/plugins/start"
-# Vim colorscheme directory.
+# Vim colorscheme directory
 COLOR_DIR="$USER_HOME/.vim/colors"
 
 mkdir -p "$PLUGIN_DIR"
