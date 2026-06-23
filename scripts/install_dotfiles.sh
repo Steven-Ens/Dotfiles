@@ -47,4 +47,7 @@ ln -sfn "$DOTFILES/.bashrc" "/root/.bashrc"
 ln -sfn "$DOTFILES/.bash_profile" "/root/.bash_profile"
 ln -sfn "$DOTFILES/.vimrc" "/root/.vimrc"
 
+# Make sure everything in the user's home is owned by them
+chown -R steve:steve "$USER_HOME"
+
 echo "Dotfiles installed successfully."
