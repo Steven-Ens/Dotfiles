@@ -1,7 +1,7 @@
 # Dotfiles
 
 ## Dotfile Installation
-* Run ```install_dotfiles.sh``` as root to install the dotfiles:
+* Run ```install_dotfiles.sh``` as root to install the dotfiles (Onwership of /home/steve not modified):
 ```
 $ sudo ./scripts/install_dotfiles.sh
 ```
