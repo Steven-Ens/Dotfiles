@@ -10,6 +10,7 @@ mkdir -p "$USER_HOME/.config/i3"
 mkdir -p "$USER_HOME/.config/i3status"
 mkdir -p "$USER_HOME/.config/kitty"
 mkdir -p "$USER_HOME/.vim"
+mkdir -p "$USER_HOME/Pictures/wallpaper"
 
 # ln -sfn
 # -s = Make a symbolic link
@@ -18,6 +19,7 @@ mkdir -p "$USER_HOME/.vim"
 
 # ~/
 ln -sfn "$DOTFILES/.ctags" "$USER_HOME/.ctags"
+ln -sfn "$DOTFILES/.fehbg" "$USER_HOME/.fehbg"
 ln -sfn "$DOTFILES/.gitconfig" "$USER_HOME/.gitconfig"
 ln -sfn "$DOTFILES/.xinitrc" "$USER_HOME/.xinitrc"
 
@@ -28,11 +30,14 @@ ln -sfn "$DOTFILES/.config/i3/config" "$USER_HOME/.config/i3/config"
 ln -sfn "$DOTFILES/.config/i3status/config" "$USER_HOME/.config/i3status/config"
 
 # ~/.config/kitty/
-ln -sfn "$DOTFILES/.config/kitty/kitty.conf" "$USER_HOME/.config/kitty/kitty.conf"
 ln -sfn "$DOTFILES/.config/kitty/current-theme.conf" "$USER_HOME/.config/kitty/current-theme.conf"
+ln -sfn "$DOTFILES/.config/kitty/kitty.conf" "$USER_HOME/.config/kitty/kitty.conf"
 
 # ~/.vim/
 ln -sfn "$DOTFILES/.vim/coc-settings.json" "$USER_HOME/.vim/coc-settings.json"
+
+# ~/Pictures/wallpaper/
+ln -sfn "$DOTFILES/Pictures/wallpaper/wallpaper.jpg" "$USER_HOME/Pictures/wallpaper/wallpaper.jpg"
 
 # /usr/share/X11/xkb/symbols/
 ln -sfn "$DOTFILES/usr/share/X11/xkb/symbols/pc" "/usr/share/X11/xkb/symbols/pc"
