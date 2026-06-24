@@ -110,6 +110,11 @@ bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'Exit i3 Window Manager & End
 
 # Start i3bar to display the i3status bar 
 bar {
-        status_command i3status
-        position top
+    status_command i3status
+    position top
+    font pango: DejaVu Sans Mono 16
+
+    colors {
+        background #3B4252
+    }
 }
