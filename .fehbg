@@ -1,0 +1,3 @@
+#!/bin/sh
+# --no-fehbg tells feh not to overwrite this file when running the command
+feh --no-fehbg --bg-fill '/home/steve/Pictures/wallpaper/wallpaper.jpg' 

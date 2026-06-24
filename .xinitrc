@@ -11,13 +11,16 @@ else
     xrandr --output eDP-1 --auto
 fi
 
-# Set screen brightness
+# Screen brightness
 brightnessctl set 60%
 
 # Audio
 pipewire &
 pipewire-pulse &
 wireplumber &
+
+# Wallpaper
+~/.fehbg &
 
 # Start i3
 exec i3
