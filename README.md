@@ -20,6 +20,7 @@ $ ./scripts/update_vim_plugins.sh
 
 ## File Locations
 * ```~/.ctags```
+* ```~/.fehbg```
 * ```~/.gitconfig```
 * ```~/.xinitrc```
 * ```~/.config/i3/config```
@@ -27,6 +28,7 @@ $ ./scripts/update_vim_plugins.sh
 * ```~/.config/kitty/current-theme.conf```
 * ```~/.config/kitty/kitty.conf```
 * ```~/.vim/coc-settings.json```
+* ```~/Pictures/wallpaper/wallpaper.jpg```
 * ```/usr/share/X11/xkb/symbols/pc```
 
 The following files are symlinked to ```~/``` and ```/root/``` as sudo uses root shell settings:
