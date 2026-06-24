@@ -5,7 +5,8 @@ numlockx &
 
 # Use the secondary monitor if connected
 if xrandr | grep -q "^HDMI-1 connected"; then
-    xrandr --output HDMI-1 --auto --primary --output eDP-1 --off
+    xrandr --output HDMI-1 --mode 3440x1440 --rate 49.95 --primary 
+    xrandr --output eDP-1 --off
 else
     xrandr --output eDP-1 --auto
 fi
