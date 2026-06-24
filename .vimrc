@@ -46,6 +46,8 @@ nnoremap <LEADER>3 :w <CR> :redraw! <CR> :!clear && forge build <CR>
 nnoremap <LEADER>4 :w <CR> :redraw! <CR> :!clear && forge coverage --gas-report -vvv <CR>
 nnoremap <LEADER>5 :w <CR> :redraw! <CR> :!clear && forge script script/Deploy.s.sol:Deploy -vvv <CR>
 nnoremap <LEADER>6 :w <CR> :!forge fmt % <CR> :e <CR>
+" solhint
+nnoremap <LEADER>7 :w <CR> :redraw! <CR> :!clear && solhint % <CR>
 " Substitute
 nnoremap <LEADER>rn :call Substitute() <CR>
 " Save files after opening without write permissions
