@@ -13,10 +13,6 @@ set -o vi
 # Set vim as the default editor
 export EDITOR=vim
 
-# Update directory colours to blue (di), and remove the green highlight from sticky & other-writable directories making them yellow (tw)
-LS_COLORS="di=1;38;5;74:tw=1;33"
-export LS_COLORS
-
 # Use CTRL-l to clear screen after bash vi keys set
 bind -m vi-insert "\C-l":clear-screen
 
