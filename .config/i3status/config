@@ -22,12 +22,12 @@ order += "battery 0"
 order += "time"
 
 path_exists VPN {
-        path = "/proc/sys/net/ipv4/conf/tun-ipv4"
+        path = "/proc/sys/net/ipv4/conf/tun0"
         format = " VPN "
 }
 
 wireless wlan0 {
-        format_up = " W: %ip "
+        format_up = " W: %ip (%quality @ %essid )"
         format_down = " W: DOWN "
 }
 
@@ -38,30 +38,29 @@ ethernet eth0 {
 
 disk "/mnt/usb" {
         format = " F: %percentage_used USED of %total "
+		format_not_mounted = " F: NONE "
+		threshold_type = "percentage_free"
     	low_threshold = "20"
-    	threshold_type = "percentage_free"
     	format_below_threshold = " F: %percentage_free FREE "
-    	format_not_mounted = " F: NONE "
 }
 
 disk "/" {
         format = " S: %percentage_used USED of %total "
-	low_threshold = "20"
-    	threshold_type = "percentage_free"
+		threshold_type = "percentage_free"
+		low_threshold = "20"
     	format_below_threshold = " S: %percentage_free FREE "
 }
 
 memory {
         format = " M: %percentage_used USED of %total "
-        threshold_degraded = "20%"
-        format_degraded = " M: %percentage_free FREE "
+        threshold_degraded = "60%"
     	threshold_critical = "10%"
-    	format_degraded = " M: %percentage_free FREE "
+		format_degraded = " M: %percentage_free FREE "
 }
 
 cpu_usage {
     	format = " P: %usage "
-    	degraded_threshold = "80"
+    	degraded_threshold = "60"
     	max_threshold = "90"
 }
 
@@ -74,19 +73,18 @@ cpu_temperature 0 {
 volume master {
         format = " V: %volume "
         format_muted = " V: MUTED (%volume) "
-        device = "pulse"
-}
-
-time {
-        format = " %H:%M %m-%d-%y "
 }
 
 battery 0 {
         format = " B: %percentage "
+		format_percentage = "%0.00f%s"
         format_down = " B: NONE "
         path = "/sys/class/power_supply/BAT1/uevent"
         last_full_capacity = true
-        integer_battery_capacity = true 
+		threshold_type = "percentage"
         low_threshold = "20"
-        threshold_type = "percentage"
+}
+
+time {
+        format = " %H:%M %m-%d-%y "
 }
