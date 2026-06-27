@@ -3,8 +3,8 @@
 # Exit immediately if any command fails
 set -e
 
-DOTFILES="/home/steve/Dotfiles"
 USER_HOME="/home/steve"
+DOTFILES="/home/steve/Dotfiles"
 
 mkdir -p "$USER_HOME/.config/i3"
 mkdir -p "$USER_HOME/.config/i3status"
