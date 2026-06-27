@@ -20,8 +20,8 @@ mode Launcher {
     bindsym Escape mode "default" 
 }
 
-# Font options for window titles and the status bar 
-#font pango:DejaVu Sans Mono 12 
+# Font options for window titles
+font pango:DejaVu Sans Mono 16
 
 # Start a terminal window
 bindsym Mod1+Return exec kitty
