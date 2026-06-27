@@ -77,6 +77,8 @@ volume master {
 
 battery 0 {
         format = " B: %percentage "
+		min_width = 100
+		align = "center"
 		format_percentage = "%0.00f%s"
         format_down = " B: NONE "
         path = "/sys/class/power_supply/BAT1/uevent"
