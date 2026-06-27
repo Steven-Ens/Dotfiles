@@ -3,16 +3,15 @@
 # Autostart programs in specific workspaces
 exec --no-startup-id i3-msg "workspace 1; exec firefox; workspace 2; exec kitty; workspace 2" 
 
-# Brightness keyboard keys
+# brightnessctl keyboard keys
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
-# Pulseaudio keyboard keys
+# pipewire keyboard keys
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Program launcher
 bindsym Mod1+m mode Launcher
@@ -22,10 +21,7 @@ mode Launcher {
 }
 
 # Font options for window titles and the status bar 
-font pango:DejaVu Sans Mono 12 
-
-# Lock the computer
-bindsym Mod1+space exec --no-startup-id i3lock -f -c 000000
+#font pango:DejaVu Sans Mono 12 
 
 # Start a terminal window
 bindsym Mod1+Return exec kitty
@@ -102,11 +98,14 @@ bindsym Mod1+Shift+7 move container to workspace number $ws7
 bindsym Mod1+Shift+8 move container to workspace number $ws8
 bindsym Mod1+Shift+9 move container to workspace number $ws9
 
+# Lock the computer
+bindsym Mod1+space exec --no-startup-id i3lock -f -c 000000
+
 # Restart i3 preserving the session
 bindsym Mod1+Shift+r restart
 
 # Exit i3 and log out of your X session
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'Exit i3 Window Manager & End Current X Session?' -B ' YES ' 'i3-msg exit'"
+bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'Exit?' -B ' YES ' 'i3-msg exit'"
 
 # Start i3bar to display the i3status bar 
 bar {
