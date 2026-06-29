@@ -1,13 +1,13 @@
 # Dotfiles
 
 ## Dotfile Installation
-* Run ```install_dotfiles.sh``` as root to install the dotfiles. Onwership of /home/steve is not modified:
+* Run ```install_dotfiles.sh``` as root to install the dotfiles. Onwership of ```/home/steve``` is not modified:
 ```
 $ sudo ./scripts/install_dotfiles.sh
 ```
 
 ## Vim Plugin Installation
-* Run ```install_vim_plugins.sh``` to install vim plugins:
+* Run ```install_vim_plugins.sh``` to install Vim plugins:
 ```
 $ ./scripts/install_vim_plugins.sh
 ```
