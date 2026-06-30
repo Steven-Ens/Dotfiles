@@ -40,11 +40,11 @@ ln -sfn "$DOTFILES/.vim/coc-settings.json" "$USER_HOME/.vim/coc-settings.json"
 # ~/Pictures/wallpaper/
 ln -sfn "$DOTFILES/Pictures/wallpaper/wallpaper.jpg" "$USER_HOME/Pictures/wallpaper/wallpaper.jpg"
 
-# /usr/share/X11/xkb/symbols/
-ln -sfn "$DOTFILES/usr/share/X11/xkb/symbols/pc" "/usr/share/X11/xkb/symbols/pc"
-
 # /etc/pacman.d/hooks/
 ln -sfn "$DOTFILES/etc/pacman.d/hooks/update_vim_plugins.hook" "/etc/pacman.d/hooks/update_vim_plugins.hook"
+
+# /usr/share/X11/xkb/symbols/
+ln -sfn "$DOTFILES/usr/share/X11/xkb/symbols/pc" "/usr/share/X11/xkb/symbols/pc"
 
 # ~/
 ln -sfn "$DOTFILES/.bashrc" "$USER_HOME/.bashrc"
