@@ -29,6 +29,7 @@ $ ./scripts/update_vim_plugins.sh
 * ```~/.config/kitty/kitty.conf```
 * ```~/.vim/coc-settings.json```
 * ```~/Pictures/wallpaper/wallpaper.jpg```
+* ```/etc/pacman.d/hooks/update_vim_plugins.hook```
 * ```/usr/share/X11/xkb/symbols/pc```
 
 The following files are symlinked to ```~/``` and ```/root/``` as sudo uses root shell settings:
