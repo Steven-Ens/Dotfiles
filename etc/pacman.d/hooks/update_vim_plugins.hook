@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = updating vim plugins...
+When = PostTransaction
+Exec = /usr/bin/bash -c '/home/steve/Dotfiles/scripts/update_vim_plugins.sh'
