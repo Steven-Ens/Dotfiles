@@ -48,7 +48,7 @@ alias vpn='sudo openvpn --config /etc/openvpn/client/ca_vancouver.ovpn --auth-no
 
 # New foundry project
 new() {
-    forge init "$1" || return
+    forge init --empty "$1" || return
 
     cp ~/Dotfiles/foundry/.gitignore "$1/"
     cp ~/Dotfiles/foundry/.solhint.json "$1/"
