@@ -38,8 +38,8 @@ alias r='cd ~/Repositories'
 alias feh='feh --fullscreen --draw-filename'
 # Run PIA VPN
 alias vpn='sudo openvpn --config /etc/openvpn/client/ca_vancouver.ovpn --auth-nocache --auth-user-pass /etc/openvpn/login.txt'
-# View enabled processes
 
+# View enabled processes
 alias status='sudo sv status /run/runit/service/*' 
 # Reboot 
 alias reboot='sudo reboot'
