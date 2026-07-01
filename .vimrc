@@ -43,13 +43,14 @@ nnoremap <LEADER>1 :NERDTreeToggle <CR>
 nnoremap <LEADER>2 :TagbarToggle <CR>
 " Forge
 nnoremap <LEADER>3 :w <CR> :redraw! <CR> :!clear && forge build <CR>
-nnoremap <LEADER>4 :w <CR> :redraw! <CR> :!clear && forge coverage --gas-report -vvv <CR>
-nnoremap <LEADER>5 :w <CR> :redraw! <CR> :!clear && forge script script/Deploy.s.sol:Deploy -vvv <CR>
-nnoremap <LEADER>6 :w <CR> :!forge fmt % <CR> :e <CR>
+nnoremap <LEADER>4 :w <CR> :redraw! <CR> :!clear && forge test -vvv <CR>
+nnoremap <LEADER>5 :w <CR> :redraw! <CR> :!clear && forge coverage --gas-report -vvv <CR>
+nnoremap <LEADER>6 :w <CR> :redraw! <CR> :!clear && forge script script/Deploy.s.sol:Deploy -vvv <CR>
+nnoremap <LEADER>7 :w <CR> :!forge fmt % <CR> :edit <CR>
 " solhint
-nnoremap <LEADER>7 :w <CR> :redraw! <CR> :!clear && solhint % <CR>
+nnoremap <LEADER>8 :w <CR> :redraw! <CR> :!clear && solhint % <CR>
 " Substitute
-nnoremap <LEADER>rn :call Substitute() <CR>
+nnoremap <LEADER>9 :call Substitute() <CR>
 " Save files after opening without write permissions
 nnoremap <LEADER>0 :w !sudo tee % > /dev/null <CR> 
 
@@ -59,7 +60,7 @@ nnoremap <LEADER>q :wq <CR>
 nnoremap <LEADER>qq :q! <CR>
 " Enter visual block mode
 nnoremap <LEADER>v <C-v>
-" Move one window to the right. Tagbar uses <SPACE> so comma needed   
+" Switch to the next split window. Tagbar uses <Space> so comma is needed
 nnoremap ,r <C-w>w  
 
 " ====================
@@ -97,7 +98,7 @@ let g:indentLine_char = '|'
 " Close vim if the only window left open is a NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Solidity for tagbar
+" Solidity for Tagbar
 let g:tagbar_type_solidity = {
     \ 'ctagstype': 'solidity',
     \ 'ctagsargs': '-f - --options=/home/steve/.ctags',
@@ -128,7 +129,7 @@ let g:tagbar_show_linenumbers = 1
 let g:tagbar_jump_offset = winheight(0) / 5 
 
 " Use git commands with vim-fugitive
-nnoremap <leader>g :Git<Space>
+nnoremap <leader>g :Git <Space>
 
 " ====================
 " Substitute
