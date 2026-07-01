@@ -32,18 +32,27 @@ alias ....='cd ../../..'
 # Directory shortcuts
 alias h='cd ~' 
 alias d='cd ~/Downloads' 
-alias r='cd ~/repositories' 
+alias r='cd ~/Repositories' 
 
 # feh
 alias feh='feh --fullscreen --draw-filename'
 # Run PIA VPN
 alias vpn='sudo openvpn --config /etc/openvpn/client/ca_vancouver.ovpn --auth-nocache --auth-user-pass /etc/openvpn/login.txt'
 # View enabled processes
+
 alias status='sudo sv status /run/runit/service/*' 
 # Reboot 
 alias reboot='sudo reboot'
 # Shutdown
 alias shutdown='sudo poweroff'
+
+# New foundry project
+new() {
+    forge init "$1" || return
+
+    cp ~/Dotfiles/foundry/.gitignore "$1/"
+    cp ~/Dotfiles/foundry/.solhint.json "$1/"
+}
 
 # Open new terminal in same directory as current terminal
 cd() {
