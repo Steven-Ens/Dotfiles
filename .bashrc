@@ -10,7 +10,7 @@ PS2='\[\e[1;37m\]\$> \[\e[0;37m\]'
 # Set Vim as the default editor
 export EDITOR=vim
 
-# Auto Vi keybindings
+# Set Vi keybindings
 set -o vi
 
 # Use CTRL-l to clear screen with Vi keybindings set
@@ -66,9 +66,10 @@ fi
 # Open new terminals in ~ once terminal closed
 trap 'echo "$HOME" > ~/.lastdir' EXIT
 
-# nvm source string loading nvm and nvm bash_completion
+# nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-export PATH="$PATH:/home/steve/.foundry/bin"
+# Foundry
+export PATH="$PATH:$HOME/.foundry/bin"
