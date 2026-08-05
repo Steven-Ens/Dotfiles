@@ -1,19 +1,19 @@
 # Dotfiles
 
 ## Dotfile Installation
-* Run ```install_dotfiles.sh``` as root to install the dotfiles. Onwership of ```/home/steve``` is not modified:
+* Run ```install_dotfiles.sh``` as root to install the dotfiles. Onwership of ```/home/<user>``` is not modified:
 ```
-$ sudo ./home/steve/Dotfiles/scripts/install_dotfiles.sh
+$ sudo ./home/<user>/Dotfiles/scripts/install_dotfiles.sh
 ```
 
 ## Vim Plugin Installation
 * Run ```install_vim_plugins.sh``` to install Vim plugins:
 ```
-$ ./home/steve/Dotfiles/scripts/install_vim_plugins.sh
+$ ./home/<user>/Dotfiles/scripts/install_vim_plugins.sh
 ```
 
 ## Vim Plugin Updates
-* ```./home/steve/Dotfiles/scripts/update_vim_plugins.sh``` runs automatically as a pacman hook post update.
+* ```./home/<user>/Dotfiles/scripts/update_vim_plugins.sh``` runs automatically as a pacman hook post update.
 
 ## File Locations
 * ```~/.ctags```
