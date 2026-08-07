@@ -19,9 +19,12 @@ mkdir -p "/etc/pacman.d/hooks"
 # -n = If destination is a symlink to a directory, replace the symlink itself instead of following it
 
 # ~/
+ln -sfn "$DOTFILES/.bash_profile" "$USER_HOME/.bash_profile"
+ln -sfn "$DOTFILES/.bashrc" "$USER_HOME/.bashrc"
 ln -sfn "$DOTFILES/.ctags" "$USER_HOME/.ctags"
 ln -sfn "$DOTFILES/.fehbg" "$USER_HOME/.fehbg"
 ln -sfn "$DOTFILES/.gitconfig" "$USER_HOME/.gitconfig"
+ln -sfn "$DOTFILES/.vimrc" "$USER_HOME/.vimrc"
 ln -sfn "$DOTFILES/.xinitrc" "$USER_HOME/.xinitrc"
 
 # ~/.config/i3/
@@ -45,18 +48,5 @@ ln -sfn "$DOTFILES/etc/pacman.d/hooks/update_vim_plugins.hook" "/etc/pacman.d/ho
 
 # /usr/share/X11/xkb/symbols/
 ln -sfn "$DOTFILES/usr/share/X11/xkb/symbols/pc" "/usr/share/X11/xkb/symbols/pc"
-
-# ~/
-ln -sfn "$DOTFILES/.bashrc" "$USER_HOME/.bashrc"
-ln -sfn "$DOTFILES/.bash_profile" "$USER_HOME/.bash_profile"
-ln -sfn "$DOTFILES/.vimrc" "$USER_HOME/.vimrc"
-
-# /root/
-ln -sfn "$DOTFILES/.bashrc" "/root/.bashrc"
-ln -sfn "$DOTFILES/.bash_profile" "/root/.bash_profile"
-ln -sfn "$DOTFILES/.vimrc" "/root/.vimrc"
-
-# Make sure everything in the user's home is owned by them
-chown -R steve:steve "$USER_HOME"
 
 echo "Dotfiles installed successfully."
