@@ -1,4 +1,4 @@
-# Dotfiles
+# Installation
 
 ## Clone the Repository
 ```
@@ -43,7 +43,12 @@ $ sudo ln -sfn /home/<user>/.vim/colors/nord.vim /root/.vim/colors/nord.vim
 ## Vim Plugin Updates
 ```<directory>/Dotfiles/scripts/update_vim_plugins.sh``` runs automatically as a pacman hook post update.
 
-## File Locations
+## Reboot
+```
+$ sudo reboot
+```
+
+# File Locations
 The following files are symlinked to ```~/``` and ```/root/``` because sudo uses root shell settings:
 * ```.bashrc```
 * ```.bash_profile```
