@@ -11,7 +11,6 @@ mkdir -p "$USER_HOME/.config/i3status"
 mkdir -p "$USER_HOME/.config/kitty"
 mkdir -p "$USER_HOME/.vim"
 mkdir -p "$USER_HOME/Pictures/wallpaper"
-mkdir -p "/etc/pacman.d/hooks"
 
 # ln -sfn
 # -s = Make a symbolic link
@@ -42,11 +41,5 @@ ln -sfn "$DOTFILES/.vim/coc-settings.json" "$USER_HOME/.vim/coc-settings.json"
 
 # ~/Pictures/wallpaper/
 ln -sfn "$DOTFILES/Pictures/wallpaper/wallpaper.jpg" "$USER_HOME/Pictures/wallpaper/wallpaper.jpg"
-
-# /etc/pacman.d/hooks/
-ln -sfn "$DOTFILES/etc/pacman.d/hooks/update_vim_plugins.hook" "/etc/pacman.d/hooks/update_vim_plugins.hook"
-
-# /usr/share/X11/xkb/symbols/
-ln -sfn "$DOTFILES/usr/share/X11/xkb/symbols/pc" "/usr/share/X11/xkb/symbols/pc"
 
 echo "Dotfiles installed successfully."
