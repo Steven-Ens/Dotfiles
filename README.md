@@ -15,11 +15,18 @@ $ cd <directory>/Dotfiles/scripts/
 $ ./install_dotfiles.sh
 ```
 
-## Manually Link Dotfiles for root
+## Manually Link Dotfiles to ```/root/```
 ```
 $ sudo ln -sfn <directory>/Dotfiles/.bash_profile /root/.bash_profile
 $ sudo ln -sfn <directory>/Dotfiles/.bashrc /root/.bashrc
 $ sudo ln -sfn <directory>/Dotfiles/.vimrc /root/.vimrc
+```
+
+## Manually Link Dotfiles to ```/etc/``` and ```/usr/```
+```
+$ sudo mkdir -p /etc/pacman.d/hooks
+$ sudo ln -sfn "<directory>/Dotfiles/etc/pacman.d/hooks/update_vim_plugins.hook" "/etc/pacman.d/hooks/update_vim_plugins.hook"
+$ sudo ln -sfn "<directory>/Dotfiles/usr/share/X11/xkb/symbols/pc" "/usr/share/X11/xkb/symbols/pc"
 ```
 
 ## Vim Plugin Installation
@@ -27,7 +34,7 @@ $ sudo ln -sfn <directory>/Dotfiles/.vimrc /root/.vimrc
 $ ./install_vim_plugins.sh
 ```
 
-## Manually Link Vim Theme for root
+## Manually Link Vim Theme to ```/root/```
 ```
 $ sudo mkdir -p /root/.vim/colors
 $ sudo ln -sfn /home/<user>/.vim/colors/nord.vim /root/.vim/colors/nord.vim
@@ -53,5 +60,7 @@ The following files are symlinked to ```~/```:
 * ```~/.config/kitty/kitty.conf```
 * ```~/.vim/coc-settings.json```
 * ```~/Pictures/wallpaper/wallpaper.jpg```
+
+The following files are symlinked to ```/etc/``` and ```/usr/```:
 * ```/etc/pacman.d/hooks/update_vim_plugins.hook```
 * ```/usr/share/X11/xkb/symbols/pc```
