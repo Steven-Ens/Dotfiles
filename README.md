@@ -25,8 +25,8 @@ $ sudo ln -sfn <directory>/Dotfiles/.vimrc /root/.vimrc
 ## Manually Link Dotfiles to ```/etc/``` and ```/usr/```
 ```
 $ sudo mkdir -p /etc/pacman.d/hooks
-$ sudo ln -sfn "<directory>/Dotfiles/etc/pacman.d/hooks/update_vim_plugins.hook" "/etc/pacman.d/hooks/update_vim_plugins.hook"
-$ sudo ln -sfn "<directory>/Dotfiles/usr/share/X11/xkb/symbols/pc" "/usr/share/X11/xkb/symbols/pc"
+$ sudo ln -sfn <directory>/Dotfiles/etc/pacman.d/hooks/update_vim_plugins.hook /etc/pacman.d/hooks/update_vim_plugins.hook
+$ sudo ln -sfn <directory>/Dotfiles/usr/share/X11/xkb/symbols/pc /usr/share/X11/xkb/symbols/pc
 ```
 
 ## Vim Plugin Installation
