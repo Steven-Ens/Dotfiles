@@ -1,6 +1,7 @@
 # Foundry
 broadcast/
 cache/
+lib/
 out/
 
 # Environment
