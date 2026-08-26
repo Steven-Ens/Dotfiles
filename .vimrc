@@ -41,14 +41,25 @@ let mapleader = " "
 
 nnoremap <LEADER>1 :NERDTreeToggle <CR>
 nnoremap <LEADER>2 :TagbarToggle <CR>
-" Forge
-nnoremap <LEADER>3 :w <CR> :redraw! <CR> :!clear && forge build <CR>
-nnoremap <LEADER>4 :w <CR> :redraw! <CR> :!clear && forge test -vvv <CR>
-nnoremap <LEADER>5 :w <CR> :redraw! <CR> :!clear && forge coverage --gas-report -vvv <CR>
-nnoremap <LEADER>6 :w <CR> :redraw! <CR> :!clear && forge script script/Deploy.s.sol:Deploy -vvv <CR>
-nnoremap <LEADER>7 :w <CR> :!forge fmt % <CR> :edit <CR>
-" solhint
-nnoremap <LEADER>8 :w <CR> :redraw! <CR> :!clear && solhint % <CR>
+
+" Solidity / Foundry
+" 3-8: Format, Lint, Build, Test, Coverage, Deploy
+autocmd FileType solidity nnoremap <buffer> <LEADER>3 :w <CR> :!forge fmt % <CR> :edit <CR>
+autocmd FileType solidity nnoremap <buffer> <LEADER>4 :w <CR> :redraw! <CR> :!clear && solhint % <CR>
+autocmd FileType solidity nnoremap <buffer> <LEADER>5 :w <CR> :redraw! <CR> :!clear && forge build <CR>
+autocmd FileType solidity nnoremap <buffer> <LEADER>6 :w <CR> :redraw! <CR> :!clear && forge test -vvv <CR>
+autocmd FileType solidity nnoremap <buffer> <LEADER>7 :w <CR> :redraw! <CR> :!clear && forge coverage --gas-report -vvv <CR>
+autocmd FileType solidity nnoremap <buffer> <LEADER>8 :w <CR> :redraw! <CR> :!clear && forge script script/Deploy.s.sol:Deploy -vvv <CR>
+
+" Rust / Cargo
+" 3-8: Format, Lint, Build, Test, Coverage, Run
+autocmd FileType rust nnoremap <buffer> <LEADER>3 :w <CR> :!rustfmt % <CR> :edit <CR>
+autocmd FileType rust nnoremap <buffer> <LEADER>4 :w <CR> :redraw! <CR> :!clear && cargo clippy <CR>
+autocmd FileType rust nnoremap <buffer> <LEADER>5 :w <CR> :redraw! <CR> :!clear && cargo build <CR>
+autocmd FileType rust nnoremap <buffer> <LEADER>6 :w <CR> :redraw! <CR> :!clear && cargo test -- --nocapture <CR>
+autocmd FileType rust nnoremap <buffer> <LEADER>7 :w <CR> :redraw! <CR> :!clear && cargo llvm-cov <CR>
+autocmd FileType rust nnoremap <buffer> <LEADER>8 :w <CR> :redraw! <CR> :!clear && cargo run <CR>
+
 " Substitute
 nnoremap <LEADER>9 :call Substitute() <CR>
 " Save files after opening without write permissions
