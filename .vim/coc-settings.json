@@ -5,6 +5,11 @@
       "args": ["--stdio"],
       "filetypes": ["solidity"],
       "rootPatterns": ["foundry.toml"]
+    },
+    "rust": {
+      "command": "rust-analyzer",
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml"]
     }
   }
 }
