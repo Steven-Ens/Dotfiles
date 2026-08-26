@@ -6,6 +6,19 @@
       "filetypes": ["solidity"],
       "rootPatterns": ["foundry.toml"]
     },
+    "typescript": {
+      "command": "tsc",
+      "args": ["--lsp", "--stdio"],
+      "filetypes": [
+        "typescript",
+        "javascript"
+      ],
+      "rootPatterns": [
+        "tsconfig.json",
+        "jsconfig.json",
+        "package.json"
+      ]
+    },
     "rust": {
       "command": "rust-analyzer",
       "filetypes": ["rust"],
