@@ -9,7 +9,14 @@
     "rust": {
       "command": "rust-analyzer",
       "filetypes": ["rust"],
-      "rootPatterns": ["Cargo.toml"]
+      "rootPatterns": ["Cargo.toml"],
+      "settings": {
+        "rust-analyzer": {
+          "completion": {
+            "limit": 20
+          }
+        }
+      }
     }
   }
 }
