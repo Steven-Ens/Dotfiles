@@ -1,5 +1,5 @@
 " ~/.vimrc
-" Description: Optimized for Solidity development
+" Description: Optimized for Solidity and Rust development
 " Author: Steven Ens
 
 " ====================
