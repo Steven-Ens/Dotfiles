@@ -74,3 +74,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # Foundry
 export PATH="$PATH:$HOME/.foundry/bin"
+
+# Rust
+. "$HOME/.cargo/env"
