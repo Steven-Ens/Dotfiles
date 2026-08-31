@@ -191,6 +191,15 @@ set softtabstop=4
 set shiftwidth=4
 
 " ====================
+" Solidity 
+" ====================
+
+" Wrap text at 120 columns
+autocmd FileType solidity setlocal textwidth=120
+" Wrap comments 
+autocmd FileType solidity setlocal formatoptions+=c
+
+" ====================
 " Statue Line 
 " ====================
 
