@@ -72,7 +72,7 @@ nnoremap <LEADER>qq :q! <CR>
 " Enter visual block mode
 nnoremap <LEADER>v <C-v>
 " Use git commands with vim-fugitive
-nnoremap <leader>g :Git <Space>
+nnoremap <leader>g :Git
 
 " ====================
 " Plugins
