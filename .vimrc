@@ -65,14 +65,14 @@ nnoremap <LEADER>9 :call Substitute() <CR>
 " Save files after opening without write permissions
 nnoremap <LEADER>0 :w !sudo tee % > /dev/null <CR> 
 
-" Letter key bindings
+" Letter keybindings
 nnoremap <LEADER>w :w <CR>
 nnoremap <LEADER>q :wq <CR>
 nnoremap <LEADER>qq :q! <CR>
 " Enter visual block mode
 nnoremap <LEADER>v <C-v>
-" Switch to the next split window. Tagbar uses <Space> so comma is needed
-nnoremap ,r <C-w>w  
+" Use git commands with vim-fugitive
+nnoremap <leader>g :Git <Space>
 
 " ====================
 " Plugins
@@ -138,9 +138,6 @@ let g:tagbar_autoclose = 1
 let g:tagbar_show_linenumbers = 1
 " Set the tag jump location to appear 20% from the top
 let g:tagbar_jump_offset = winheight(0) / 5 
-
-" Use git commands with vim-fugitive
-nnoremap <leader>g :Git <Space>
 
 " ====================
 " Substitute
