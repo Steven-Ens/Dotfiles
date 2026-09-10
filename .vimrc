@@ -137,7 +137,21 @@ let g:tagbar_autoclose = 1
 " Show line numbers
 let g:tagbar_show_linenumbers = 1
 " Set the tag jump location to appear 20% from the top
-let g:tagbar_jump_offset = winheight(0) / 5 
+let g:tagbar_jump_offset = winheight(0) / 5
+
+" Automatically resize Tagbar to fit its longest visible entry, with a minimum width of 40 columns and a maximum of 80
+function! AutoSizeTagbar(timer)
+    if !exists('t:tagbar_buf_name') | return | endif
+    let l:tagwin = bufwinnr(t:tagbar_buf_name)
+    if l:tagwin == -1 | return | endif
+
+    let l:curwin = winnr()
+    noautocmd execute l:tagwin . 'wincmd w'
+    execute 'vertical resize ' . min([max([max(map(getline(1,'$'), 'strdisplaywidth(v:val)')) + 2, 40]), 80])
+    noautocmd execute l:curwin . 'wincmd w'
+endfunction
+
+autocmd BufEnter,CursorHold,BufWritePost * call timer_start(10, 'AutoSizeTagbar')
 
 " ====================
 " Substitute
