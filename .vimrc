@@ -112,7 +112,7 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Solidity for Tagbar
 let g:tagbar_type_solidity = {
     \ 'ctagstype': 'solidity',
-    \ 'ctagsargs': '-f - --options=/home/steve/.ctags',
+    \ 'ctagsargs': '-f - --options=/home/steve/.ctags --sort=no',
     \ 'kinds' : [
         \ 'a:Contracts',
         \ 'b:Interfaces',
