@@ -216,6 +216,8 @@ autocmd FileType solidity setlocal formatoptions+=c
 
 " Wrap text at 100 columns
 autocmd FileType rust setlocal textwidth=100
+autocmd FileType rust setlocal formatoptions+=t
+
 " Wrap comments 
 autocmd FileType rust setlocal formatoptions+=c
 
