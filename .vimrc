@@ -207,6 +207,7 @@ set shiftwidth=4
 
 " Wrap text at 120 columns
 autocmd FileType solidity setlocal textwidth=120
+autocmd FileType solidity setlocal formatoptions+=t
 " Wrap comments 
 autocmd FileType solidity setlocal formatoptions+=c
 
