@@ -230,6 +230,7 @@ autocmd FileType typescript,javascript,html,css,json setlocal shiftwidth=2
 
 " Wrap text at 80 columns
 autocmd FileType typescript,javascript,html,css,json setlocal textwidth=80
+autocmd FileType typescript,javascript,html,css,json setlocal formatoptions+=t
 " Wrap comments
 autocmd FileType typescript,javascript,html,css,json setlocal formatoptions+=c
 
