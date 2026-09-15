@@ -211,13 +211,27 @@ autocmd FileType solidity setlocal textwidth=120
 autocmd FileType solidity setlocal formatoptions+=c
 
 " ====================                                                                                                                                                                                                                                                                                       
+" Rust                                                                                                                                                                                                                                                                                                               
+" ====================
+
+" Wrap text at 100 columns
+autocmd FileType rust setlocal textwidth=100
+" Wrap comments 
+autocmd FileType rust setlocal formatoptions+=c
+
+" ====================                                                                                                                                                                                                                                                                                       
 " Web                                                                                                                                                                                                                                                                                                               
 " ====================
 
 " 2-space indentation                                                                                                                                                                                                                                                                                        
 autocmd FileType typescript,javascript,html,css,json setlocal tabstop=2                                                                                                                                                                                                                                        
 autocmd FileType typescript,javascript,html,css,json setlocal softtabstop=2                                                                                                                                                                                                                                         
-autocmd FileType typescript,javascript,html,css,json setlocal shiftwidth=2   
+autocmd FileType typescript,javascript,html,css,json setlocal shiftwidth=2
+
+" Wrap text at 80 columns
+autocmd FileType typescript,javascript,html,css,json setlocal textwidth=80
+" Wrap comments
+autocmd FileType typescript,javascript,html,css,json setlocal formatoptions+=c
 
 " ====================
 " Statue Line 
