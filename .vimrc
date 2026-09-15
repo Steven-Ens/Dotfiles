@@ -1,5 +1,5 @@
 " ~/.vimrc
-" Description: Optimized for Solidity and Rust development
+" Description: Optimized for Solidity, Rust, and web development
 " Author: Steven Ens
 
 " ====================
@@ -209,6 +209,15 @@ set shiftwidth=4
 autocmd FileType solidity setlocal textwidth=120
 " Wrap comments 
 autocmd FileType solidity setlocal formatoptions+=c
+
+" ====================                                                                                                                                                                                                                                                                                       
+" Web                                                                                                                                                                                                                                                                                                               
+" ====================
+
+" 2-space indentation                                                                                                                                                                                                                                                                                        
+autocmd FileType typescript,javascript,html,css,json setlocal tabstop=2                                                                                                                                                                                                                                        
+autocmd FileType typescript,javascript,html,css,json setlocal softtabstop=2                                                                                                                                                                                                                                         
+autocmd FileType typescript,javascript,html,css,json setlocal shiftwidth=2   
 
 " ====================
 " Statue Line 
