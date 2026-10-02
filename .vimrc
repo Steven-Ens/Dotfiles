@@ -57,7 +57,7 @@ autocmd FileType rust nnoremap <buffer> <LEADER>3 :w <CR> :!rustfmt % <CR> :edit
 autocmd FileType rust nnoremap <buffer> <LEADER>4 :w <CR> :redraw! <CR> :!clear && cargo clippy <CR>
 autocmd FileType rust nnoremap <buffer> <LEADER>5 :w <CR> :redraw! <CR> :!clear && cargo build <CR>
 autocmd FileType rust nnoremap <buffer> <LEADER>6 :w <CR> :redraw! <CR> :!clear && cargo test -- --nocapture <CR>
-autocmd FileType rust nnoremap <buffer> <LEADER>7 :w <CR> :redraw! <CR> :!clear && cargo llvm-cov <CR>
+autocmd FileType rust nnoremap <buffer> <LEADER>7 :w <CR> :redraw! <CR> :!clear && cargo llvm-cov --show-missing-lines <CR>
 autocmd FileType rust nnoremap <buffer> <LEADER>8 :w <CR> :redraw! <CR> :!clear && cargo run <CR>
 
 " Substitute
