@@ -177,8 +177,9 @@ endfunction
 " Enable syntax highlighting
 syntax enable 
 
-" Show line numbers
+" Show absolute line number on the current line and relative numbers elsewhere
 set number
+set relativenumber
 " Show a visual line on the cursor's current line
 set cursorline
 " Show the matching part of the pair for (), [] and {} 
