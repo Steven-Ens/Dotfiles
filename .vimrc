@@ -53,7 +53,7 @@ autocmd FileType solidity nnoremap <buffer> <LEADER>8 :w <CR> :redraw! <CR> :!cl
 
 " Rust / Cargo
 " 3-8: Format, Lint, Build, Test, Coverage, Run
-autocmd FileType rust nnoremap <buffer> <LEADER>3 :w <CR> :!rustfmt % <CR> :edit <CR>
+autocmd FileType rust nnoremap <buffer> <LEADER>3 :wall <CR> :!cargo fmt <CR> :edit <CR>
 autocmd FileType rust nnoremap <buffer> <LEADER>4 :w <CR> :redraw! <CR> :!clear && cargo clippy <CR>
 autocmd FileType rust nnoremap <buffer> <LEADER>5 :w <CR> :redraw! <CR> :!clear && cargo check <CR>
 autocmd FileType rust nnoremap <buffer> <LEADER>6 :w <CR> :redraw! <CR> :!clear && cargo test -- --nocapture <CR>
